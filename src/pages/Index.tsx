@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { ArrowRight, Star, Users, TrendingUp, Database, Zap, Shield, CheckCircle, MessageCircle, Target, Eye, Rocket } from 'lucide-react';
+import { ArrowRight, Star, Users, TrendingUp, Database, Zap, Shield, CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import AnimatedBackground from '@/components/AnimatedBackground';
@@ -20,7 +20,7 @@ const Index = () => {
   }, []);
 
   const whatsappNumber = "+1234567890"; // Replace with your actual WhatsApp number
-  const whatsappMessage = "Hi! I'm interested in Accelerate's lead enrichment services and would like to learn more about the free trial.";
+  const whatsappMessage = "Hi! I'm interested in your lead enrichment services and would like to learn more about the free trial.";
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -28,34 +28,29 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
       <AnimatedBackground />
       
-      {/* Subtle Cursor Glow Effect */}
+      {/* Cursor Glow Effect */}
       <div 
-        className="fixed pointer-events-none z-10 w-64 h-64 rounded-full opacity-10 bg-gradient-to-r from-blue-400 to-slate-400 blur-3xl transition-all duration-500"
+        className="fixed pointer-events-none z-10 w-96 h-96 rounded-full opacity-20 bg-gradient-to-r from-purple-400 to-pink-400 blur-3xl transition-all duration-300"
         style={{
-          left: mousePosition.x - 128,
-          top: mousePosition.y - 128,
+          left: mousePosition.x - 192,
+          top: mousePosition.y - 192,
         }}
       />
 
       {/* Header */}
-      <header className="relative z-20 border-b border-gray-800/50 backdrop-blur-md">
+      <header className="relative z-20 border-b border-white/10 backdrop-blur-md">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-slate-400 rounded-lg flex items-center justify-center">
-                <Rocket className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <span className="text-2xl font-bold text-white">Accelerate</span>
-                <p className="text-xs text-gray-400">Accelerate Your Business</p>
-              </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg"></div>
+              <span className="text-xl font-bold">LeadAlchemy</span>
             </div>
             <Button 
               onClick={handleWhatsAppClick}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 border border-blue-500/20"
+              className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               Contact Us
@@ -68,29 +63,29 @@ const Index = () => {
       <section className="relative z-10 pt-20 pb-32">
         <div className="container mx-auto px-6 text-center">
           <div className="mb-8 animate-fade-in">
-            <div className="inline-flex items-center bg-gray-900/50 backdrop-blur-md rounded-full px-6 py-2 mb-8 border border-gray-700/50">
-              <Star className="w-4 h-4 text-blue-400 mr-2" />
-              <span className="text-sm text-gray-300">Trusted by 10,000+ businesses worldwide</span>
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-6 py-2 mb-8 border border-white/20">
+              <Star className="w-4 h-4 text-yellow-400 mr-2" />
+              <span className="text-sm">Trusted by 10,000+ businesses worldwide</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
               Everything you need to
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 sell, scale, and succeed
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               Transform your business with bulk lead enrichment. Get verified contact data for 500M+ profiles 
-              and turn cold prospects into hot leads. We accelerate your business growth with precision data.
+              and turn cold prospects into hot leads. Grow your pipeline by 300% with our precision data.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               onClick={handleWhatsAppClick}
-              className="bg-gradient-to-r from-blue-600 to-slate-600 hover:from-blue-700 hover:to-slate-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl border border-blue-500/20"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
             >
               Start Free Trial
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -109,7 +104,7 @@ const Index = () => {
               { number: "10K+", label: "Happy Clients" }
             ].map((stat, index) => (
               <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -119,90 +114,63 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Banner */}
-      <section className="relative z-10 py-8 border-y border-gray-800/50">
-        <div className="container mx-auto px-6 text-center">
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
-            <div className="flex items-center text-gray-300">
-              <Shield className="w-5 h-5 mr-2 text-blue-400" />
-              <span className="font-semibold">Secure and compliant</span>
-            </div>
-            <div className="hidden md:block w-px h-6 bg-gray-700"></div>
-            <div className="text-gray-300">
-              <span className="font-semibold">Coverage and quality you can count on</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Growth Section */}
-      <section className="relative z-10 py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                Grow, Renew and <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">Expand Customers</span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Drive revenue by expanding into new accounts and deepening relationships with current accounts.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Eye,
-                  title: "Reveal Account Insights",
-                  description: "Use AI to deliver tailored, actionable account intelligence.",
-                  gradient: "from-blue-500 to-slate-500"
-                },
-                {
-                  icon: Target,
-                  title: "Spot Ideal Buyers",
-                  description: "Zero in on new and multithread existing accounts.",
-                  gradient: "from-slate-500 to-gray-500"
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Simplify Deal Progression",
-                  description: "Accelerate deals with frictionless processes.",
-                  gradient: "from-gray-500 to-blue-500"
-                }
-              ].map((item, index) => (
-                <Card key={index} className="bg-gray-900/30 backdrop-blur-md border border-gray-700/50 hover:bg-gray-800/40 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-8">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${item.gradient} flex items-center justify-center mb-6`}>
-                      <item.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 text-white">{item.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
-      <FeatureCards />
-
-      {/* Data Foundation Section */}
       <section className="relative z-10 py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-              A data foundation <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">you can build on</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Why choose <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">LeadAlchemy?</span>
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              We gather public data from the web, our proprietary data, and the power of LLMs to convert 
-              unstructured information into precise and standardized data sets.
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              We don't just provide data - we deliver results. Our enrichment process turns your cold leads into revenue-generating opportunities.
             </p>
-            <div className="bg-gray-900/40 backdrop-blur-md border border-gray-700/50 rounded-2xl p-8">
-              <p className="text-lg text-gray-200">
-                Get access to clean, precise, and reliable data that your B2B team needs to go-to-market.
-              </p>
-            </div>
+          </div>
+          
+          <FeatureCards />
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="relative z-10 py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              How it <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">works</span>
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                step: "01",
+                title: "Upload Your Leads",
+                description: "Send us your lead list with basic information. We accept CSV, Excel, or direct CRM integration.",
+                icon: Database
+              },
+              {
+                step: "02", 
+                title: "AI-Powered Enrichment",
+                description: "Our advanced algorithms enrich your data with verified emails, phone numbers, and behavioral insights.",
+                icon: Zap
+              },
+              {
+                step: "03",
+                title: "Scale Your Outreach",
+                description: "Get enriched data back and watch your conversion rates soar with precise targeting.",
+                icon: TrendingUp
+              }
+            ].map((item, index) => (
+              <Card key={index} className="bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-8 text-center">
+                  <div className="text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+                    {item.step}
+                  </div>
+                  <item.icon className="w-12 h-12 mx-auto mb-4 text-purple-400" />
+                  <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                  <p className="text-gray-300">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -213,9 +181,9 @@ const Index = () => {
       {/* CTA Section */}
       <section className="relative z-10 py-20">
         <div className="container mx-auto px-6 text-center">
-          <div className="bg-gradient-to-r from-gray-900/60 to-blue-900/30 backdrop-blur-md border border-gray-700/50 rounded-3xl p-12 max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Ready to <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">accelerate your business?</span>
+          <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-md border border-white/10 rounded-3xl p-12 max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">10x your sales?</span>
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands of businesses already using our lead enrichment service. 
@@ -225,7 +193,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 onClick={handleWhatsAppClick}
-                className="bg-gradient-to-r from-blue-600 to-slate-600 hover:from-blue-700 hover:to-slate-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl border border-blue-500/20"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
               >
                 <MessageCircle className="mr-2 w-5 h-5" />
                 Get Free Trial via WhatsApp
@@ -234,15 +202,15 @@ const Index = () => {
             
             <div className="flex items-center justify-center mt-6 space-x-6 text-sm text-gray-400">
               <div className="flex items-center">
-                <CheckCircle className="w-4 h-4 mr-2 text-blue-400" />
+                <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
                 Free trial available
               </div>
               <div className="flex items-center">
-                <Shield className="w-4 h-4 mr-2 text-blue-400" />
+                <Shield className="w-4 h-4 mr-2 text-green-400" />
                 GDPR compliant
               </div>
               <div className="flex items-center">
-                <Users className="w-4 h-4 mr-2 text-blue-400" />
+                <Users className="w-4 h-4 mr-2 text-green-400" />
                 24/7 support
               </div>
             </div>
@@ -251,20 +219,15 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-gray-800/50 py-12">
+      <footer className="relative z-10 border-t border-white/10 py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-slate-400 rounded-lg flex items-center justify-center">
-                <Rocket className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <span className="text-xl font-bold text-white">Accelerate</span>
-                <p className="text-xs text-gray-500">Accelerate Your Business</p>
-              </div>
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg"></div>
+              <span className="text-xl font-bold">LeadAlchemy</span>
             </div>
-            <div className="text-gray-500 text-sm">
-              © 2025 Accelerate. All rights reserved. Transform leads into revenue.
+            <div className="text-gray-400 text-sm">
+              © 2025 LeadAlchemy. All rights reserved. Transform leads into revenue.
             </div>
           </div>
         </div>

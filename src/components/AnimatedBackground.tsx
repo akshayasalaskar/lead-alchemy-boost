@@ -20,7 +20,7 @@ const AnimatedBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Shooting stars (limited to header area)
+    // Shooting stars
     const shootingStars: Array<{
       x: number;
       y: number;
@@ -30,7 +30,7 @@ const AnimatedBackground = () => {
       angle: number;
     }> = [];
 
-    // Floating particles (space dust)
+    // Floating particles
     const particles: Array<{
       x: number;
       y: number;
@@ -40,28 +40,28 @@ const AnimatedBackground = () => {
       opacity: number;
     }> = [];
 
-    // Initialize fewer particles for subtlety
-    for (let i = 0; i < 30; i++) {
+    // Initialize particles
+    for (let i = 0; i < 50; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.3 + 0.1,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.5 + 0.1,
       });
     }
 
-    // Create shooting star occasionally (only in top 40% of screen)
+    // Create shooting star occasionally
     const createShootingStar = () => {
-      if (Math.random() < 0.02) {
+      if (Math.random() < 0.03) {
         shootingStars.push({
           x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height * 0.4, // Only top 40% of screen
-          length: Math.random() * 60 + 15,
-          speed: Math.random() * 2 + 1.5,
+          y: Math.random() * canvas.height * 0.5,
+          length: Math.random() * 80 + 20,
+          speed: Math.random() * 3 + 2,
           opacity: 1,
-          angle: Math.random() * Math.PI / 6 + Math.PI / 6,
+          angle: Math.random() * Math.PI / 4 + Math.PI / 4,
         });
       }
     };
@@ -69,11 +69,11 @@ const AnimatedBackground = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw subtle particles
+      // Draw particles
       particles.forEach((particle) => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(148, 163, 184, ${particle.opacity})`; // Slate color
+        ctx.fillStyle = `rgba(168, 85, 247, ${particle.opacity})`;
         ctx.fill();
 
         // Update particle position
@@ -87,7 +87,7 @@ const AnimatedBackground = () => {
         if (particle.y > canvas.height) particle.y = 0;
       });
 
-      // Draw shooting stars with blue tint
+      // Draw shooting stars
       shootingStars.forEach((star, index) => {
         const gradient = ctx.createLinearGradient(
           star.x,
@@ -95,12 +95,12 @@ const AnimatedBackground = () => {
           star.x - Math.cos(star.angle) * star.length,
           star.y - Math.sin(star.angle) * star.length
         );
-        gradient.addColorStop(0, `rgba(96, 165, 250, ${star.opacity})`); // Blue-400
-        gradient.addColorStop(1, `rgba(96, 165, 250, 0)`);
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${star.opacity})`);
+        gradient.addColorStop(1, `rgba(168, 85, 247, 0)`);
 
         ctx.beginPath();
         ctx.strokeStyle = gradient;
-        ctx.lineWidth = 1.5;
+        ctx.lineWidth = 2;
         ctx.moveTo(star.x, star.y);
         ctx.lineTo(
           star.x - Math.cos(star.angle) * star.length,
@@ -111,7 +111,7 @@ const AnimatedBackground = () => {
         // Update shooting star
         star.x += Math.cos(star.angle) * star.speed;
         star.y += Math.sin(star.angle) * star.speed;
-        star.opacity -= 0.008;
+        star.opacity -= 0.01;
 
         // Remove faded stars
         if (star.opacity <= 0 || star.x > canvas.width || star.y > canvas.height) {
