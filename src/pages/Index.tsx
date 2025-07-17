@@ -46,7 +46,7 @@ const Index = () => {
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg"></div>
-              <span className="text-xl font-bold">LeadAlchemy</span>
+              <span className="text-xl font-bold">LeadNexio</span>
             </div>
             <Button 
               onClick={handleWhatsAppClick}
@@ -119,7 +119,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why choose <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">LeadAlchemy?</span>
+              Why choose <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">LeadNexio?</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               We don't just provide data - we deliver results. Our enrichment process turns your cold leads into revenue-generating opportunities.
@@ -187,7 +187,7 @@ const Index = () => {
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands of businesses already using our lead enrichment service. 
-              Start your free trial today and see the difference quality data makes.
+              Contact us on WhatsApp to get started - no credit card required, just connect with us!
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -224,10 +224,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg"></div>
-              <span className="text-xl font-bold">LeadAlchemy</span>
+              <span className="text-xl font-bold">LeadNexio</span>
             </div>
             <div className="text-gray-400 text-sm">
-              © 2025 LeadAlchemy. All rights reserved. Transform leads into revenue.
+              © 2025 LeadNexio. All rights reserved. Transform leads into revenue.
             </div>
           </div>
         </div>
