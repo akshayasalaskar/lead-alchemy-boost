@@ -77,8 +77,8 @@ const Index = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transform your business with bulk lead enrichment. Get verified contact data for 500M+ profiles 
-              and turn cold prospects into hot leads. Grow your pipeline by 300% with our precision data.
+              Transform your business with bulk lead enrichment. Try 100 leads first, then scale with verified contact data for 500M+ profiles. 
+              Don't have leads? We can provide them. Share your ICP and watch your pipeline grow by 300%.
             </p>
           </div>
 
@@ -87,11 +87,11 @@ const Index = () => {
               onClick={handleWhatsAppClick}
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
             >
-              Start Free Trial
+              Try 100 Leads Free
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <p className="text-sm text-gray-400">
-              No credit card required • Free trial available
+              No credit card required • 100 leads trial
             </p>
           </div>
 
@@ -143,8 +143,8 @@ const Index = () => {
             {[
               {
                 step: "01",
-                title: "Upload Your Leads",
-                description: "Send us your lead list with basic information. We accept CSV, Excel, or direct CRM integration.",
+                title: "Share Your ICP",
+                description: "Send us your leads or share your Ideal Customer Profile. No leads? We can provide them for you.",
                 icon: Database
               },
               {
