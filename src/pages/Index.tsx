@@ -20,7 +20,7 @@ const Index = () => {
   }, []);
 
   const whatsappNumber = "+1234567890"; // Replace with your actual WhatsApp number
-  const whatsappMessage = "Hi! I'm interested in your lead enrichment services and would like to learn more about the free trial.";
+  const whatsappMessage = "Hi! I'm interested in your lead enrichment services and would like to get leads for my business.";
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -77,8 +77,8 @@ const Index = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transform your business with bulk lead enrichment. Try 100 leads first, then scale with verified contact data for 500M+ profiles. 
-              Don't have leads? We can provide them. Share your ICP and watch your pipeline grow by 300%.
+              Transform your business with bulk lead enrichment. Get verified contact data for 500M+ profiles. 
+              Don't have leads? We can provide them. Contact us on WhatsApp to get started and watch your pipeline grow by 300%.
             </p>
           </div>
 
@@ -87,11 +87,11 @@ const Index = () => {
               onClick={handleWhatsAppClick}
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
             >
-              Try 100 Leads Free
+              Get Leads via WhatsApp
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <p className="text-sm text-gray-400">
-              No credit card required • 100 leads trial
+              Contact us now • Professional lead service
             </p>
           </div>
 
@@ -196,14 +196,14 @@ const Index = () => {
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
               >
                 <MessageCircle className="mr-2 w-5 h-5" />
-                Get Free Trial via WhatsApp
+                Get Leads via WhatsApp
               </Button>
             </div>
             
             <div className="flex items-center justify-center mt-6 space-x-6 text-sm text-gray-400">
               <div className="flex items-center">
                 <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
-                Free trial available
+                Premium lead service
               </div>
               <div className="flex items-center">
                 <Shield className="w-4 h-4 mr-2 text-green-400" />
